@@ -49,7 +49,7 @@ const GroupInfo = () => {
             let foundItem = checklist.find((elem) => elem.uid === event.target.value)
             updatedList = [...checked, { uid: foundItem.uid, displayName: foundItem.displayName }];
         } else {
-            let filteredList = updatedList.filter((obj) => obj.uid != event.target.value);
+            let filteredList = updatedList.filter((obj) => obj.uid !== event.target.value);
             updatedList = [...filteredList];
         }
         setChecked(updatedList);
