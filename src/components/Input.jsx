@@ -8,12 +8,12 @@ import {
   query,
   collection
 } from "firebase/firestore";
-import { db, storage } from "../firebase";
+import { db } from "../firebase";
 
 
 const Input = () => {
   const [text, setText] = useState("");
-  const [img, setImg] = useState(null);
+  const [setImg] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);

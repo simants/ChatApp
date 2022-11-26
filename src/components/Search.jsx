@@ -4,7 +4,6 @@ import {
   query,
   where,
   getDocs,
-  setDoc,
   doc,
   updateDoc,
   getDoc,
@@ -56,13 +55,13 @@ const Search = () => {
       const gp = docRef.data();
 
       console.log("gp: ", gp);
-      const flag = true;
+      let flag = true;
       const isMember = gp.members.find((m) => m.uid === currentUser.uid)
 
       console.log("isMem: ", isMember);
 
       if (gp.admin.uid === currentUser.uid || isMember) {
-        flag = false
+        flag = false;
       }
 
       console.log("g: ", group);
