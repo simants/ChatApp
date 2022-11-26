@@ -1,6 +1,6 @@
 
 .formContainer {
-  background-color: #a7bcff;
+  background-color: #b88aea;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -16,14 +16,14 @@
     align-items: center;
 
     .logo {
-      color: #5d5b8d;
+      color: #5e3f85;
       font-weight: bold;
       font-size: 24px;
 
     }
 
     .title {
-      color: #5d5b8d;
+      color: #5e3f85;
       font-size: 12px;
     }
 
@@ -36,14 +36,14 @@
         padding: 15px;
         border: none;
         width: 250px;
-        border-bottom: 1px solid #a7bcff;
+        border-bottom: 1px solid #b88aea;
         &::placeholder {
           color: rgb(175, 175, 175);
         }
       }
 
       button {
-        background-color: #7b96ec;
+        background-color: #795acd;
         color: white;
         padding: 10px;
         font-weight: bold;
@@ -52,7 +52,7 @@
       }
     }
     p {
-      color: #5d5b8d;
+      color: #5e3f85;
       font-size: 12px;
       margin-top: 10px;
     }
@@ -60,7 +60,7 @@
 }
 
 .home {
-  background-color: #a7bcff;
+  background-color: #b88aea;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -76,13 +76,13 @@
 
     .sidebar {
       flex: 1;
-      background-color: #3e3c61;
+      background-color: #563c61;
       position: relative;
 
       .navbar {
         display: flex;
         align-items: center;
-        background-color: #2f2d52;
+        background-color: #4f2f77;
         height: 50px;
         padding: 10px;
         justify-content: space-between;
@@ -96,16 +96,12 @@
           display: flex;
           gap: 10px;
 
-          img {
-            background-color: #ddddf7;
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-
           }
         }
+      }
+      img {
+        height: 24px;
+        cursor: pointer;
       }
       .search {
         border-bottom: 1px solid gray;
@@ -155,7 +151,7 @@
 
       .chatInfo {
         height: 50px;
-        background-color: #5d5b8d;
+        background-color: #5e3f85;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -174,7 +170,7 @@
       }
 
       button {
-        background-color: #5d5b8d;
+        background-color: #5e3f85;
         color: #ddddf7;
         font-size: 15px;
         border: none;
@@ -183,7 +179,7 @@
       
 
       .messages {
-        background-color: #ddddf7;
+        background-color: #d2c2ed;
         padding: 10px;
         height: calc(100% - 160px);
         overflow: scroll;
@@ -199,12 +195,6 @@
             color: gray;
             font-weight: 300;
 
-            img {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              object-fit: cover;
-            }
           }
           .messageContent {
             max-width: 80%;
@@ -230,7 +220,7 @@
             .messageContent {
               align-items: flex-end;
               p {
-                background-color: #8da4f1;
+                background-color: #3a1842;
                 color: white;
                 border-radius: 10px 0px 10px 10px;
               }
@@ -273,11 +263,65 @@
             border: none;
             padding: 10px 15px;
             color: white;
-            background-color: #8da4f1;
+            background-color: #8f8df1;
             cursor: pointer;
           }
         }
       }
     }
   }
+  .groupContainer {
+    background-color: #b88aea;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: white;
+      font-size: 18px;
+
+      &::placeholder {
+        color: lightgray;
+      }
+    }
+    .groupname {
+      height: 50px;
+      background-color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .groupinfo {
+      color: #5e3f85;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #d2c2ed;
+    }
+    .checked-item,
+    .not-checked-item {
+      margin-left: 10px;
+    }
+    button {
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      background-color: white;
+      cursor: pointer;
+
+    }
+
+    
 

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Add from "../img/add.png";
 import Messages from "./Messages";
 import Input from "./Input";
 import { ChatContext } from "../context/ChatContext";
@@ -14,9 +13,8 @@ const Chat = () => {
   return (
     <div className="chat">
       <div className="chatInfo">
-        <span>{data.user?.displayName}</span>
+        <span>{data.group?.groupName}</span>
         <div className="chatIcons">
-          <img src={Add} alt="" />
           <button onClick={()=>signOut(auth)}>logout</button>
         </div>
       </div>

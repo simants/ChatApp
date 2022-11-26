@@ -1,4 +1,4 @@
-import { doc, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { ChatContext } from "../context/ChatContext";
 import { db } from "../firebase";
@@ -8,17 +8,41 @@ const Messages = () => {
   const [messages, setMessages] = useState([]);
   const { data } = useContext(ChatContext);
 
+  console.log("in msg: ", data);
+
+
   useEffect(() => {
-    const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
-      doc.exists() && setMessages(doc.data().messages);
-    });
 
-    return () => {
-      unSub();
-    };
-  }, [data.chatId]);
+    const getChatData = (groupId) => {
 
-  console.log(messages)
+      console.log("gid: ", groupId);
+
+      onSnapshot(
+        query(
+          collection(db, "groups", groupId, "chats"),
+          orderBy('date', 'asc')),
+        (querySnapshot) => {
+
+          console.log("snap: ", querySnapshot);
+
+          const lst = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data()
+          })
+          )
+
+          console.log("is: ", lst)
+
+          setMessages(lst)
+
+        })
+    }
+
+
+    if (data.group.groupId) getChatData(data.group.groupId);
+
+
+  }, [data.group]);
 
   return (
     <div className="messages">
