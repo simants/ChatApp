@@ -6,7 +6,6 @@ import { db } from "../firebase";
 
 const Chats = () => {
   const [groups, setGroups] = useState([]);
-
   const { currentUser } = useContext(AuthContext);
   const { dispatch } = useContext(ChatContext);
 
@@ -38,7 +37,7 @@ const Chats = () => {
           });
 
 
-          console.log("Groups Names : ", groups)
+          // console.log("Groups Names : ", groups)
 
         })
 
